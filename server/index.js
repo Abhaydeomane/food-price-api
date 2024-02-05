@@ -18,7 +18,7 @@ app.use(cors({
 
 // Create a PostgreSQL connection pool
 const pool = new Pool({
-    connectionString: 'postgres://culdzbtx:JKP3WRC8GM0--iZCoTTBM3dlkSELnsIa@surus.db.elephantsql.com/culdzbtx',
+    connectionString: process.env.DB_CONN,
   });
   
   // Test the database connection
