@@ -11,11 +11,14 @@ function calculateTotalPrice() {
         item_type: item_type
     };
 
-        // Check if any of the input fields are empty
+    // Check if any of the input fields are empty
     if (!zone || !organization_id || !total_distance || !item_type) {
         alert('Missing required parameters');
         return;
     }
+
+    // Show loading spinner
+    document.getElementById('loading').style.display = 'block';
 
     fetch('https://food-price-api.onrender.com/cost', {
         method: 'POST',
@@ -26,9 +29,13 @@ function calculateTotalPrice() {
     })
     .then(response => response.json())
     .then(data => {
+        // Hide loading spinner
+        document.getElementById('loading').style.display = 'none';
         document.getElementById('total_price').innerText = `Total Price: ${data.total_price}`;
     })
     .catch(error => {
+        // Hide loading spinner
+        document.getElementById('loading').style.display = 'none';
         document.getElementById('total_price').innerText = `Error`;
     });
 }
