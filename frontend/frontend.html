@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Frontend</title>
+</head>
+<body>
+    <h1>Calculate Total Price</h1>
+    <div>
+        <label for="zone">Zone:</label>
+        <select id="zone" name="zone">
+            <option value="Central" selected>Central</option>
+        </select>
+    </div>
+    <div>
+        <label for="organization_id">Organization ID:</label>
+        <select id="organization_id" name="organization_id">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+    <div>
+        <label for="total_distance">Total Distance:</label>
+        <input type="number" id="total_distance" name="total_distance">
+    </div>
+    <div>
+        <label for="item_type">Item Type:</label>
+        <select id="item_type" name="item_type">
+            <option value="perishable">Perishable</option>
+        </select>
+    </div>
+    <button onclick="calculateTotalPrice()">Calculate Total Price</button>
+    <div id="total_price"></div>
+
+    <script src="frontend.js"></script>
+</body>
+</html>
